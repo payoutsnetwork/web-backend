@@ -2,7 +2,7 @@
 
 module.exports = async (event, context) => {
   const { Employee } = context.models;
-  const { id } = event.body;
+  const { id } = event.query;
   try {
     const r = await Employee.query()
       .patch({ status: "inactive" })

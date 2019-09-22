@@ -119,7 +119,7 @@ function upAll() {
 }
 
 function handleProxy(functionName, index) {
-  const path = getDeployment().functions[functionName].handler.slice(1);
+  const path = "/functions/" + functionName;
   const port = dockerStartPort + index;
   console.log(path, port);
   app.use(path, proxy(`${baseUrl}:${port}`));
