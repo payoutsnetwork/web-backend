@@ -36,7 +36,8 @@ function getDockerServices(functionName, index) {
   const watchVolumes = [
     `${handler}:/home/app/function`,
     `./template/nodemon-armhf/db:/home/app/db`,
-    `./template/nodemon-armhf/model:/home/app/model`
+    `./template/nodemon-armhf/model:/home/app/model`,
+    `./template/nodemon-armhf/index.js:/home/app/index.js`
   ];
   return {
     functionName,

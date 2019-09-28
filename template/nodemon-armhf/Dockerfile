@@ -24,6 +24,7 @@ RUN npm i
 
 # Copy outer function handler
 COPY index.js ./
+COPY .env ./
 
 # COPY function node packages and install, adding this as a separate
 # entry allows caching of npm install
@@ -61,6 +62,7 @@ ENV write_timeout="15s"
 ENV read_timeout="15s"
 
 HEALTHCHECK --interval=3s CMD [ -e /tmp/.lock ] || exit 1
+RUN npm install forever env-cmd
 
 CMD ["fwatchdog"]
 

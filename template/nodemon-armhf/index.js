@@ -72,7 +72,10 @@ var middleware = (req, res) => {
   let cb = (err, functionResult) => {
     if (err) {
       console.error(err);
-      return res.status(500).send(err);
+      return res
+        .set(fnContext.headers())
+        .status(fnContext.status())
+        .send(err);
     }
 
     if (isArray(functionResult) || isObject(functionResult)) {

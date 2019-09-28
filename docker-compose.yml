@@ -18,6 +18,7 @@ services:
       - './functions/employees/get-employees:/home/app/function'
       - './template/nodemon-armhf/db:/home/app/db'
       - './template/nodemon-armhf/model:/home/app/model'
+      - './template/nodemon-armhf/index.js:/home/app/index.js'
   post-employees:
     network_mode: host
     container_name: post-employees
@@ -36,6 +37,7 @@ services:
       - './functions/employees/post-employees:/home/app/function'
       - './template/nodemon-armhf/db:/home/app/db'
       - './template/nodemon-armhf/model:/home/app/model'
+      - './template/nodemon-armhf/index.js:/home/app/index.js'
   patch-employees:
     network_mode: host
     container_name: patch-employees
@@ -54,6 +56,7 @@ services:
       - './functions/employees/patch-employees:/home/app/function'
       - './template/nodemon-armhf/db:/home/app/db'
       - './template/nodemon-armhf/model:/home/app/model'
+      - './template/nodemon-armhf/index.js:/home/app/index.js'
   delete-employees:
     network_mode: host
     container_name: delete-employees
@@ -72,6 +75,7 @@ services:
       - './functions/employees/delete-employees:/home/app/function'
       - './template/nodemon-armhf/db:/home/app/db'
       - './template/nodemon-armhf/model:/home/app/model'
+      - './template/nodemon-armhf/index.js:/home/app/index.js'
   get-states:
     network_mode: host
     container_name: get-states
@@ -90,3 +94,4 @@ services:
       - './functions/states/get-states:/home/app/function'
       - './template/nodemon-armhf/db:/home/app/db'
       - './template/nodemon-armhf/model:/home/app/model'
+      - './template/nodemon-armhf/index.js:/home/app/index.js'
